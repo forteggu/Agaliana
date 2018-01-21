@@ -1,0 +1,147 @@
+
+body {
+    font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: relative;
+    color: white;
+}
+
+.thumbnail-wrapper{
+    max-height: 15em ;
+}
+.text-color-black{
+    color: #333;
+}
+.text-color-white{
+    color: #ffffff !important;
+}
+.imagenMiniatura{
+    max-height: 12em !important;
+    display: block;
+    height: auto;
+    width: auto !important;
+}
+.imagenMiniatura:hover{
+   cursor: pointer;
+   opacity: 0.4;
+}
+.foldUpBehind{
+    margin-top: -3rem;
+    z-index: -1;
+}
+.fix-zIndex-1{
+    background-color: white;
+    z-index: 1;
+}
+.fix-zIndex-2{
+    background-color: white;
+    z-index: 2;
+}
+
+#androidTriLine {
+    margin-left: 1rem;
+    content: "";
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 16px;
+    top: 0;
+    height: 0;
+    -webkit-box-shadow: 1px 10px 1px 1px #69737d,1px 16px 1px 1px     #69737d,1px 22px 1px 1px #69737d;
+    box-shadow: 0 10px 0 1px #69737d,0 16px 0 1px #69737d,0 22px 0 1px #69737d;
+}
+.center{
+    text-align: center;
+}
+.iconSN{
+    max-height: 3em;
+    max-width: 3em;
+}
+.iconSN:hover{
+    max-height: 4em;
+    max-width: 4em;
+}
+
+
+.horizontalList{
+    list-style: none;
+    padding: 0;
+}
+
+.horizontalList li{
+    display: inline-block;
+}
+
+.socialNetworkIconList{
+    margin-top: 1rem;
+}
+
+.socialNetworkIconList li{
+    padding: 0.25rem;
+}
+
+.fixContent-textAlign-center *{
+    text-align: center;
+    align-content: center;
+}
+
+.fixContent-display-block *{
+    display: block;
+}
+
+
+#portada {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    padding: 35vh 0;
+    text-align: center;
+    color: white;
+    background: url("../images/portrait.jpg") no-repeat bottom center scroll;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  
+#portada h1{
+    font-size: 10vw;
+}
+
+#portada *{
+    font-family: 'Helvetica', sans-serif !important
+}
+#topnav{
+    padding: 0;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+#navbarResponsive{
+    opacity: 1;
+}
+
+.fix-padding-left-m1{
+    padding-left: -2em;
+}
+
+#topnavElementList li>a{
+    padding: 1em;
+}
+#topnavElementList li>a:hover{
+    background-color: rgba(255,255,255,0.2);
+}
+
+.linkPortada{
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+.linkPortada a{
+    padding: 1em;
+}
+.linkPortada a:hover{
+    background-color: rgba(255,255,255,0.2);
+    text-decoration: none;
+}
