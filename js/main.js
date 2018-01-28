@@ -1,4 +1,4 @@
-function cargarCategorias() {
+function cargarCategorias(callback) {
     $.ajax({
         method: 'POST',
         url: 'php/fetchCategories.php',
@@ -27,5 +27,21 @@ function cargarCategorias() {
                 console.error("Error al recoger las categorías");
             }
         }
+    }).always(function(){
+        if(callback){
+            callback();
+        }
+    });
+}
+
+function loadTab(e){
+    e.preventDefault();
+    var triggerElement = this;
+    $(".activeTab").fadeOut('300', 'linear', function() {
+        $(".activeTab").removeClass('activeTab');
+        $($(triggerElement).attr("data-target")).fadeIn('300', 'linear', function() {
+            $($(triggerElement).attr("data-target")).addClass('activeTab');
+        });
+
     });
 }

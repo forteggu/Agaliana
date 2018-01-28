@@ -1,0 +1,54 @@
+<div class="content">
+    <div class="wrapper wrapper_form">
+        <div id="listaAdopciones">
+        
+        </div>
+    </div>
+</div>
+<script>
+$.getJSON( "php/getAdopciones.php", function( data ) {
+  console.log(data);
+    if(data.length>0){
+        $.each(data,function(key,value){
+            console.info(data);
+            var nombre="<h1>"+data[key]["nombre"]+"</h1>";
+            var raza="<h5>"+data[key]["raza"]+"</h5>";
+            var fechaNac="<h5>"+data[key]["fechaNac"]+"</h5>";
+            var descripcion="<p>"+data[key]["descripcion"]+"</p>";
+            var img="<div class='wrapper_img'><img src='"+data[key]["urlImg"]+"' alt=''</div>";
+            var eliminB="<button class='delete' onclick='eliminar("+data[key]["id"]+")'>Eliminar</button>";
+            var div="<div class='contentAdopcion' data-id='"+data[key]["id"]+"'>"+nombre+raza+fechaNac+descripcion+img+eliminB+"</div>";
+           $("#listaAdopciones").append(div); 
+
+        });
+    }else{
+         $("#listaAdopciones").append("<h1>NO HAY RESULTADOS</h1>"); 
+        
+    }
+}).done(function(){
+          $("#listaAdopciones").fadeIn("slow"); 
+    });
+
+</script>
+<script>
+    $(".menu>ul>li").removeClass("selected"); 
+    $("#verAdopciones").addClass("selected"); 
+</script>
+<script>
+function eliminar(elemento){
+
+    $.ajax({
+      method: "POST",
+      url: "php/borrar.php",
+      data: { id: elemento},
+        success: function(data){
+             $("main").load("pages/adopciones.html");
+        }
+    })  
+        .done(function( msg ) {
+        console.info("response: "+msg);
+      });
+
+    
+}
+</script>

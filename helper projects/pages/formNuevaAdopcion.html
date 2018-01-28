@@ -1,0 +1,55 @@
+<div class="content">
+    <div class="wrapper form_wrapper">
+<!--        <form action="php/upload.php" method="post" enctype="multipart/form-data">-->
+         <form id="nuevaAdopcionForm" action="">
+            <legend>Nueva Adopción</legend>
+            <fieldset>
+                <div class="spawnRow">
+                    <label for="nombre">Nombre:
+                    </label><input type="text" name="nombre" id="nombre">
+                </div>
+                <div class="spawnRow">
+                    <label for="Raza">Descripcion:
+                    </label><input type="text" name="descripcion" id="descripcion">
+                </div>
+                <div class="spawnRow">
+                    <label for="Raza">Raza:
+                    </label><input type="text" name="raza" id="raza">
+                </div>
+                <div class="spawnRow">
+                    <label for="nombre">Fecha Nacimiento:
+                    </label><input type="text" name="fechaNac" id="fechaNac">
+                </div>
+                <div class="spawnRow">
+                    <input type="file" name="img" id="img">
+                </div>
+                <div class="spawnRow">
+                    <input type="submit" name="submit" value="Aceptar">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<script>
+    $(".menu>ul>li").removeClass("selected"); 
+    $("#nuevaAdopcion").addClass("selected"); 
+</script>
+<script>
+$("#nuevaAdopcionForm").submit(function(e){
+    e.preventDefault();
+    $.ajax({
+    type: "POST", //tipo de peticion
+    url: "php/upload.php", //url del archivo de peticion
+    data: new FormData($('#nuevaAdopcionForm')[0]), //le pasamos un formData con los datos del form 
+    processData: false,
+    contentType: false, //IMPORTANTE SI QUEREMOS PASAR IMAGENES O ARCHIVOS EN GENERAL
+    success: function (data) {
+        //ha funcionado
+        // Aquí definirías la acción a realizar en acabar el ajax, en este caso yo le voy a pedir que me cargue (actualice) el registro de las adopciones
+        $("main").load("pages/adopciones.html");
+        
+    }
+});
+   
+})
+</script>

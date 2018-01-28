@@ -1,7 +1,7 @@
 <?php
 
     //CONSTANTES
-    /*$fetchUsr="id1141922_angygaliana";
+   /* $fetchUsr="id1141922_angygaliana";
     $fetchUsrPwd="Ab123456";
     $putUsr="pUsr";
     $putUsrPwd="putUsrPwd";
